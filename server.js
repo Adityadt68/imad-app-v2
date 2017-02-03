@@ -14,6 +14,16 @@ app.get('/article-one', function(req,res){
 	res.send('Article one is requested and served here');
 });
 
+app.get('/article-second', function(req,res){
+
+	res.send('Article Second is requested and served here');
+});
+
+app.get('/article-third', function(req,res){
+
+	res.send('Article Third is requested and served here');
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
