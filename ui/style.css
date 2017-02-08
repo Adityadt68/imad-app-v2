@@ -6,6 +6,10 @@ body {
     background : #856923;
 }
 
+#heading{
+    font-size:200%;
+    font-weight: bold;
+}
 .center {
     text-align: center;
 }
