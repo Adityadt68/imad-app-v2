@@ -22,7 +22,7 @@ var articles = {
                     This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
                 </p>`
     },
-    "article-two" : {
+    "article-second" : {
         title : 'Article Second | ANS',
         heading : 'Article Second',
         date : 'sep 5 2016',
