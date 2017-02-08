@@ -10,6 +10,9 @@ body {
     text-align: center;
 }
 
+.right{
+    text-align: right;
+}
 .text-big {
     font-size: 300%;
 }
