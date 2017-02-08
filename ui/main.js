@@ -5,13 +5,13 @@ console.log('Loaded!');
 var element = document.getElementById("text-main");
 element.innerHtml = "HI there";
 
-marginRight = 0;
+marginLeft = 0;
 var img= document.getElementById("mali");
-function moveRight(){
-    marginRight = marginRight + 2;
-    img.style.marginLeft = marginRight + "px";
+function moveLeft(){
+    marginLeft = marginLeft + 2;
+    img.style.marginLeft = marginLeft + "px";
 }
 
 img.onclick = function(){
-    var interval = setInterval(moveRight , 50);
+    var interval = setInterval(moveLeft , 50);
 };
