@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles = {
-    var articleOne = {
+    "article-one" : {
         title : 'Article One | ANS',
         heading : 'Article One',
         date : 'sep 5 2015',
@@ -22,7 +22,7 @@ var articles = {
                     This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
                 </p>`
     },
-    var articleTwo = {
+    "article-two" : {
         title : 'Article Second | ANS',
         heading : 'Article Second',
         date : 'sep 5 2016',
@@ -30,7 +30,7 @@ var articles = {
                     This is the body of Article-Second I have specidfied here my body contents of HTML page. 
                 </p>`
     },
-    var articleThird = {
+    "article-third" : {
         title : 'Article Third | ANS',
         heading : 'Article Third',
         date : 'august 14 2016',
@@ -45,20 +45,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
+app.get('/:articleName', function(req,res){
 
-	res.send(createTemplate(articleOne));
+    var articleName = req.params.articleName;
+	res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-second', function(req,res){
-
-    res.send(createTemplate(articleSecond));
-});
-
-app.get('/article-third', function(req,res){
-
-	res.send(createTemplate(articleThird));
-});
 
 function createTemplate(data){
    var  bodyContent = data.Contents;
