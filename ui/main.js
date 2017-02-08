@@ -9,10 +9,7 @@ marginRight = 0;
 var img= document.getElementById("mali");
 function moveRight(){
     marginRight = marginRight + 2;
-    img.style.marginRight = marginRight + "px";
-    if(img.style.marginLeft === 0){
-        img.style.marginRight = 0;
-    }
+    img.style.marginLeft = marginRight + "px";
 }
 
 img.onclick = function(){
