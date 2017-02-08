@@ -5,7 +5,12 @@ console.log('Loaded!');
 var element = document.getElementById("text-main");
 element.innerHtml = "HI there";
 
+marginRight = 0;
+function moveRight(){
+    marginRight = marginRight + 2;
+    img.set.style.marginRight = marginRight + "px";
+}
 var img= document.getElementById("mali");
 img.onclick = function(){
-    img.style.marginRight = "100px";
+    var interval = setInterval(moveRight , 50);
 };
