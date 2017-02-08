@@ -4,23 +4,41 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne = {
-    title : 'Article One | ANS',
-    heading : 'Article One',
-    date : 'sep 5 2015',
-    Contents : `<p>
-                This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
-            </p>
-            <p>
-                This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
-            </p>
-            <p>
-                This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
-            </p>
-            <p>
-                This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
-            </p>`
+var articles = {
+    var articleOne = {
+        title : 'Article One | ANS',
+        heading : 'Article One',
+        date : 'sep 5 2015',
+        Contents : `<p>
+                    This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
+                </p>
+                <p>
+                    This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
+                </p>
+                <p>
+                    This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
+                </p>
+                <p>
+                    This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page. This is the body of Article-One I have specidfied here my body contents of HTML page.
+                </p>`
+    },
+    var articleTwo = {
+        title : 'Article Second | ANS',
+        heading : 'Article Second',
+        date : 'sep 5 2016',
+        Contents : `<p>
+                    This is the body of Article-Second I have specidfied here my body contents of HTML page. 
+                </p>`
+    },
+    var articleThird = {
+        title : 'Article Third | ANS',
+        heading : 'Article Third',
+        date : 'august 14 2016',
+        Contents : `<p>
+                    This is the body of Article-Third I have specidfied here my body contents of HTML page. 
+                </p>`
+        
+    }
 };
 
 app.get('/', function (req, res) {
@@ -34,12 +52,12 @@ app.get('/article-one', function(req,res){
 
 app.get('/article-second', function(req,res){
 
-	res.sendFile(path.join(__dirname, 'ui', 'article-second.html'));
+    res.send(createTemplate(articleSecond));
 });
 
 app.get('/article-third', function(req,res){
 
-	res.sendFile(path.join(__dirname, 'ui', 'article-third.html'));
+	res.send(createTemplate(articleThird));
 });
 
 function createTemplate(data){
